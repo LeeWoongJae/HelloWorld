@@ -1,7 +1,7 @@
 package com.yedam;
 
 public class HelloWorld {
-	public static void main(String[] agrs){
+	public static void main(String[] args){
 		// main method
 		int sum = 0;
 		System.out.println("Hellow, World");
@@ -9,6 +9,7 @@ public class HelloWorld {
 			int count = i;
 			sum += count;
 		}
-		System.out.println(sum);
+		System.out.println("I 값의 합은 : "+sum);
+		
 	}
 }
