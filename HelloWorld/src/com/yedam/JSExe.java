@@ -3,10 +3,10 @@ package com.yedam;
 public class JSExe {
 	public static void main(String[] args) {
         // test();
-		// 임의의 수를  생성,    1~ 10 사이의 임의의 값을 생성
+		// 임의의 수를  생성,    1~ 100 사이의 임의의 값을 생성
 		int sum = 0;
 		for (int i = 0 ; i<6; i++) {
-			int a = 1 + (int)(Math.random()*10);
+			int a = 1 + (int)(Math.random()*100);
 			sum+= a;
 		}
 		System.out.println(sum);
