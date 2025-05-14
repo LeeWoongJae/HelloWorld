@@ -95,14 +95,16 @@ public class JSExe {
 		String[] list = new String[1000];
 		Scanner scn = new Scanner(System.in);
 		int cnt = 0;
-		String str = " ";
+		
+		String str = "지금부터 게임을 시작합니다. ";
 		while (true) {
 			System.out.println("message , or quit? > ");
 			String msg = scn.nextLine();
-			str += msg;
-			list[cnt] += msg;
+			str += msg + ", ";
+			list[cnt] = msg;
 			cnt++;
 			if (msg.equals("quit")) {
+				str.split(", ");
 				str += " 입니다";
 				scn.close();
 				break;
@@ -111,15 +113,24 @@ public class JSExe {
 		}
 		System.out.println("End of program.");
 		System.out.println(str);
-		System.out.println(cnt);
+//		System.out.println(cnt);
+		
 		
 		for (int i = 0; i < cnt - 1; i++) {
-			System.out.print(list[cnt] + ", ");	
+			if(i == cnt-1) {
+				
+				System.out.print(list[i].split(", "));
+				break;
+			}
+			else {
+				System.out.print(list[i]+", ");
+			}
 		}
+		// 순차적으로 나온 결과값에 마지막에 ","가 포함되지 않게 출력하세요 (과제)
+		
 	}// End of test4
 
 	
-	// 순차적으로 나온 결과값에 마지막에 ","가 포함되지 않게 출력하세요 (과제)
 	
 	
 }// End of JSExe
