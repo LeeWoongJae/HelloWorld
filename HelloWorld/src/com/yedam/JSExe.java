@@ -1,7 +1,8 @@
 package com.yedam;
 
-import java.sql.Array;
+
 import java.util.*;
+
 
 public class JSExe {
 	public static void main(String[] args) {
@@ -38,7 +39,7 @@ public class JSExe {
 	public static void test2() {
 		int sum = 0;
 		double cnt = 0;
-		int[] arr = new int[100];
+//		int[] arr = new int[100];
 //		for (int i = 0 ; i<6; i++) {
 //			int a = 1 + (int)(Math.random()*100);
 //			sum+= a;
@@ -46,7 +47,7 @@ public class JSExe {
 //		System.out.println("test2의 결과값 : "+sum);
 		for (int i = 0; i < 7; i++) {
 			int a = (int) (Math.random() * 71) + 30;
-			arr[i] = a;
+//			arr[i] = a;
 			sum += a;
 			cnt = i;
 
@@ -96,19 +97,26 @@ public class JSExe {
 		Scanner scn = new Scanner(System.in);
 		int cnt = 0;
 		
-		String str = "지금부터 게임을 시작합니다. ";
+		String str = "지금부터 게임을 시작합니다. \n";
 		while (true) {
 			System.out.println("message , or quit? > ");
+			
 			String msg = scn.nextLine();
-			str += msg + ", ";
+			
 			list[cnt] = msg;
 			cnt++;
+			
 			if (msg.equals("quit")) {
-				str.split(", ");
-				str += " 입니다";
+				str += msg.replace(String.valueOf("quit"), "");
+				str = str.substring(0,str.lastIndexOf(","));				
+				str += " 입니다";		;
 				scn.close();
 				break;
+			}else {
+				str += msg + ",";	
 			}
+			
+			
 			System.out.println("입력하신 값은 : " + msg);
 		}
 		System.out.println("End of program.");
@@ -116,16 +124,18 @@ public class JSExe {
 //		System.out.println(cnt);
 		
 		
-		for (int i = 0; i < cnt - 1; i++) {
+		/*for (int i = 0; i < cnt - 1; i++) {
 			if(i == cnt-1) {
 				
-				System.out.print(list[i].split(", "));
-				break;
+				System.out.println(list[cnt]+" 입니다"); 
+				
 			}
 			else {
-				System.out.print(list[i]+", ");
+				System.out.print(list[i]+",");
 			}
 		}
+		*/
+		
 		// 순차적으로 나온 결과값에 마지막에 ","가 포함되지 않게 출력하세요 (과제)
 		
 	}// End of test4
