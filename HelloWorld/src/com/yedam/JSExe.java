@@ -22,7 +22,8 @@ public class JSExe {
 //		System.out.println(str1.equals(str2));
 
 //		test3();
-		test4();
+//		test4();
+		test5();
 
 	}// End of main
 
@@ -96,8 +97,8 @@ public class JSExe {
 		String[] list = new String[1000];
 		Scanner scn = new Scanner(System.in);
 		int cnt = 0;
-		
-		String str = "지금부터 게임을 시작합니다. \n";
+	    boolean isfirst=true;
+		String str = "나의 친구들을 소개합니다. \n";
 		while (true) {
 			System.out.println("message , or quit? > ");
 			
@@ -115,6 +116,15 @@ public class JSExe {
 			}else {
 				str += msg + ",";	
 			}
+			/*
+			if(isfirst) {
+				str += msg;
+				isfirst = false;
+			}
+			else {
+				str += ", "+msg;
+			}System.out.println(str);
+			*/
 			
 			
 			System.out.println("입력하신 값은 : " + msg);
@@ -139,7 +149,16 @@ public class JSExe {
 		// 순차적으로 나온 결과값에 마지막에 ","가 포함되지 않게 출력하세요 (과제)
 		
 	}// End of test4
-
+	public static void test5() {
+		
+		System.out.printf("%s %d\n","문자",30);
+		System.out.println("문자열 출력!");
+		System.out.printf("%s %d %.1f \n","Hongdong", 100, 100.231);
+		System.out.printf("안녕하세요 이름은 %s 입니다\n 나이는 %d 이고, \n 무게는 %d 입니다","@@@",20,60);
+		
+		
+		
+	}// End of test5
 	
 	
 	
