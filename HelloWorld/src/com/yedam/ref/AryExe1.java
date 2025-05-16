@@ -53,6 +53,7 @@ boolean run =  true;
 				// 학생수 를 입력하면 배열의 크기
 				System.out.print("학생수>");
 				studentNum = Integer.parseInt(scn.nextLine());
+				scores = new int[studentNum]; 
 				continue;
 				 
 			}
@@ -62,14 +63,14 @@ boolean run =  true;
 					System.out.printf("scores[%d]>",i);
 					int gap = Integer.parseInt(scn.nextLine());
 					scores[i] = gap;
-					continue;
+					
 				}
 				
 			}
 			else if(selectNo==3) {
 				// 점수리스트는 for문으로 서치해서 출력
 				for(int i =0;i<studentNum;i++) {
-					System.out.printf("scores[%d]>%d",i,scores[i]);  
+					System.out.printf("scores[%d]>%d\n",i,scores[i]);  
 				}
 				continue;
 			}
@@ -79,13 +80,14 @@ boolean run =  true;
 				int max=0;
 				int sum = 0;
 				for(int i=0;i<studentNum;i++) {
+					sum+=scores[i];
 					if(max < scores[i]) {
 						max = scores[i];
 					}
 				}
 				avg = 1.0*sum/studentNum;
 				System.out.printf("최고 점수: %d\n",max);
-				System.out.printf("평균 점수: %.3f\n",avg);
+				System.out.printf("평균 점수: %.2f\n",avg);
 			}else {
 				run = false;
 			}
