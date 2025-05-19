@@ -6,6 +6,24 @@ public class TodoExe {
 	static Student[] scores = null; // 저장할 학생점수
 		public static void main(String[] args) {
 			
+			int[][] numAry = new int[3][5];
+			int arySum = 0;
+			double aryAvg = 0;
+			// 임의의 숫자 생성.
+			for (int outer = 0; outer < numAry.length; outer++) {
+				for (int inner = 0; inner < numAry[outer].length; inner++) {
+					numAry[outer][inner] = (int) (Math.random() * 100) + 1;
+					arySum += numAry[outer][inner]; // 각 raw의 column에 있는 값들을 순차적으로 더함
+					System.out.printf("[%d][%d] > %d 길이>%d\n",outer,inner,numAry[outer][inner],numAry[outer].length);
+					
+				}// END OF INNER
+				aryAvg = 1.0*arySum / numAry[outer].length; // 더한 값들을 배열의 raw길이만큼 나눔
+				System.out.printf("numAry[%d]의 평균은 %.2f\n",outer,aryAvg);
+				arySum=0; // 다음 raw의 합을 누적시키기위해 초기화
+				
+			}// END OF OUTER
+			
+				
 			//scoreMaraton();
 			init();
 			
