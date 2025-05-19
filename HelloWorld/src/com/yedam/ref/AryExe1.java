@@ -100,15 +100,7 @@ boolean run =  true;
 		
 		
 	}// END OF MAIN
-	
-	
-	
-	
 		
-	
-
-
-
 	public static void aryTest() {
 		int[] ary = new int[] {10, 17, 22, 31, 55, 24};
 		
