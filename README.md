@@ -1,4 +1,4 @@
-THIS SPACE MY
+THIS SPACE MINE.
 =======
 ★[ 변수위에 마우스 호버Hover시 웹페이지가 계속 띄워질경우 ]★
 
