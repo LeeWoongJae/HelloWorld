@@ -3,7 +3,7 @@ package com.yedam.board;
 import java.util.Scanner;
 
 public class BoardExe {
-	// 필드
+	// 필드 11
 	private Board[] boards;
 	// 메서드들에게 전부 접근하기위해서 배열 미리 선언
 	Scanner scn = new Scanner(System.in);
