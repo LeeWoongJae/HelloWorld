@@ -44,12 +44,12 @@ public class Board {
 	
 	// 글번호 , 제목 , 작성자
 	public void showInfo() {
-		System.out.printf("%3d %12s\t%4s\n",bNo, title, writer);
+		System.out.printf("%3d %12s\t%s\n",bNo, title, writer);
 	}
 	// 글 조회시 상세하게 보기
 	public void showDetail() {
-		String strFormat = "글번호:%3d 작성자:%4s";
-				strFormat+="\n제목:%8s \n내용:%s\n";
+		String strFormat = "글번호: %d 작성자: %3s\n";
+				strFormat+="제목: %3s\n내용: %3s\n";
 		System.out.printf(strFormat,bNo,writer,title,contents);
 	}
 	

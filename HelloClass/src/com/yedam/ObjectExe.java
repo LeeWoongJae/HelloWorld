@@ -2,6 +2,13 @@ package com.yedam;
 
 public class ObjectExe {
 		public static void main(String[] args) {
+			
+			
+			
+			
+			
+			
+			
 		//   클래스     변수     인스턴스 생성.
 			Student student = new Student();
 			
