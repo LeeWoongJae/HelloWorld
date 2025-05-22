@@ -3,6 +3,21 @@ package com.yedam;
 import java.util.Scanner;
 
 public class Calendar {
+	
+	 static boolean isLeapYear(int year) {
+		 // https://blog.naver.com/heartflow89/220966558486
+		 // 윤년 구하기 참고
+		 
+			if (year % 4 == 0) {
+				if (year % 100 != 0) {
+					if (year % 400 == 0) {
+						return true;
+					} else {return false;}
+				} else {return false;}
+			}return false;
+		}
+	
+	
 	static void showMonth() {
 		// sun Mon Tue Wed Thu Fri Sat
 		// ===========================

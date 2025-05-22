@@ -1,24 +1,43 @@
 package com.yedam;
 
+import java.util.Scanner;
+
 public class ObjectExe {
 		public static void main(String[] args) {
 			
+			Scanner scn = new Scanner(System.in);
+			int year = 0;
+			while(true) {
+				System.out.println("년도를 입력 (종료 0)>");
+				try {
+					year = Integer.parseInt(scn.nextLine());
+						
+				}catch(Exception e) {
+					if(year==0) {break;}
+					System.out.println("확인하시고 입력하세요.");
+					continue;
+				}
+				
+				if(Calendar.isLeapYear(year)) {
+					System.out.println("윤년입니다.");
+				}else {
+					System.out.println("평년입니다.");
+					
+				}	
+						
+				
+				
+			}// end of while
 			
-			
-			
-			
-			
+			//"2010"년은 평년입니다.
+			//"2000"년은 윤년입니다.
 			
 		//   클래스     변수     인스턴스 생성.
 			Student student = new Student();
 			
-			//student.stdNum = 1001;
 			student.setStdNum(1001);
-			//student.stdName="kildong-Hong";
 			student.setStdName("kildong-Hong");
-			//student.engScore = 80;
 			student.setEngScore(80);
-			//student.mathScore = 86;
 			student.setMathScore(86);
 			student.study();
 			student.introduce();
@@ -35,7 +54,6 @@ public class ObjectExe {
 			student2.setMathScore(-52);
 			student2.study();
 			student2.introduce();
-			
 			
 			
 		}

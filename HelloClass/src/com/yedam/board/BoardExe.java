@@ -29,30 +29,50 @@ public class BoardExe {
 		
 		}
 		
-		
+		boolean loginChk() {
+			int cnt = 1;
+			for(int i=0;i<3;i++) {
+				
+				String uid = welcomeMsg("아이디를 입력>");
+				String pwd = welcomeMsg("비밀번호를 입력>");
+				if(!UserExe.login(uid, pwd)) {
+					
+					System.out.printf("[%d]회 실패했습니다 정보를 다시 확인하세요.\n",cnt);
+					if(i == 3) {
+						//System.out.println("로그인 3회 실패.");
+						return false;
+					}
+					cnt++;
+					continue;
+				}
+				// 로그인 정보가 정확할시 리턴(if> !loginChk() ==> return 처리)
+				return true;
+			}// end of for
+			// 3번의 기회를 넘어서면 false 리턴(if> !loginChk() ==> return 처리)
+			return false;
+			
+		}
 	
 	
 	//메소드.
 	void execute() {
 		boolean run = true;
-		
-		String uid = welcomeMsg("아이디를 입력>");
-		String pwd = welcomeMsg("비밀번호를 입력>");
-		
-		boolean access = UserExe.login(uid, pwd);
-		// 아이디가 있으면 아래 정상진행
-		// 없으면 밸리데이션
-		if(access == false) {
+		if(!loginChk()) {
 			return;
 		}
 		
 		while(run) {
-				stcase:
+				int menu  = 0;
 				System.out.println("-----------------------------------------------");
 				System.out.println("1. 글작성 | 2. 글수정 | 3. 글삭제 | 4. 글조회 | 5. 종료");
 				System.out.println("-----------------------------------------------");
-				int menu = navIntMsg("메뉴를 선택해주세요.");
-				
+				try {
+				    menu = navIntMsg("메뉴를 선택해주세요.");
+				}
+				catch(NumberFormatException e){
+					System.out.println("1 ~ 5 중에 선택해주세요.");
+					continue;
+				}
 				switch(menu) {
 				case 1:{
 					addBoard();break;
@@ -71,16 +91,14 @@ public class BoardExe {
 				}
 				
 				case 5: {
-					String deadCon = navMsg("프로그램을 종료합니다. 종료하시려면 엔터를 다시 실행하시려면 y를 입력해주세요");
+					String deadCon = navMsg("프로그램을 종료합니다. 종료하시려면 엔터를 입력해주세요");
 					if (deadCon=="") {
 						System.out.println("프로그램을 종료합니다.\n이용해 주셔서 감사합니다.");
 						run = false;
 						break;
 						
 					}
-					else if(deadCon.equals("y") || deadCon=="") {
-						//goto stcase;
-					}
+					
 				}
 
 				}// END OF SWITCH
