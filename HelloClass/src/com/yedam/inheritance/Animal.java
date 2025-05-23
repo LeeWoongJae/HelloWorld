@@ -5,7 +5,8 @@ public abstract class Animal {
 	// Animal 클래스는 인스턴스는 생성 불가
 	String kind;
 	
-	public void breathe() {
+	public void breathe() { 
+		// 메서드의 접근제한은 상속받은 자식에게도 동일하게 고정적으로 정의된다
 		System.out.println("숨을 쉽니다");
 	}
 	
