@@ -5,21 +5,13 @@ import java.util.List;
 import java.util.Scanner;
 
 public class MemberExePrac {
-	static Member[] memList = null;
+	//static Member[] memList = null;
 	public static void main(String[] args) {
 		
 		//test();
 		
-			
-			
 			boolean run = true;
 			Scanner scn = new Scanner(System.in);
-//			memList = new Member[30];
-//			Member dummy1 = new Member("admin" , "이웅재" ,"010-2222-3333" , 1000 );
-//			Member dummy2 = new Member("user01" , "김수현" ,"010-1234-3123" , 100 );
-//			
-//			memList[0] = dummy1;		
-//			memList[1] = dummy2;
 			
 			List<Member> members = new ArrayList<>();
 			// List 컬렉션을 활용해서 저장
@@ -88,6 +80,7 @@ public class MemberExePrac {
 							System.out.println("수정하실 전화번호를 입력해주세요");
 							String updatePnum = scn.nextLine();
 							members.get(i).setPhone(updatePnum);
+							//members.get(i);
 							System.out.println("수정이 완료되었습니다.👍");
 							break;
 						}
@@ -96,16 +89,16 @@ public class MemberExePrac {
 				case 3:{ // 회원 탈퇴
 					System.out.println("삭제하실 사용자의 이름을 입력해주세요");
 					String selectName = scn.nextLine();
-					for(int i=0;i<memList.length;i++) {
-						if(!(selectName.equals("")) || (selectName.equals(memList[i].getUserName()))){
+					for(int i=0;i<members.size();i++) {
+						if(!(selectName.equals("")) || (selectName.equals(members.get(i).getUserName()))){
 							
-							memList[i].setUserId("");
-							memList[i].setUserName("");
-							memList[i].setPhone("");
-							memList[i].setMileage(0);
+							members.get(i).setUserId("");
+							members.get(i).setUserName("");
+							members.get(i).setPhone("");
+							members.get(i).setMileage(0);
 							System.out.println("삭제되었습니다!");
 							break;
-						}else if(!(selectName.equals(memList[i].getUserName()))) {
+						}else if(!(selectName.equals(members.get(i).getUserName()))) {
 							System.out.println("삭제하실 이용자의 이름이 존재하지 않습니다\n확인하시고 다시 시도해주세요.");
 							break;
 						}
@@ -115,16 +108,16 @@ public class MemberExePrac {
 					
 					System.out.println("조회하실 사용자의 이름을 입력해주세요");
 					String selectName = scn.nextLine();
-					for(int i=0;i<memList.length;i++) {
-						if(memList[i]!=null) {
-							System.out.printf("%s\n",memList[i].getUserName());
+					for(int i=0;i<members.size();i++) {
+						if(members.get(i)!=null) {
+							System.out.printf("%s\n",members.get(i).getUserName());
 							
-							if(memList[i].getUserName().equals(selectName)){
-								System.out.printf("ID : %s 이름 : %s \n전화번호 : %s 잔여포인트 : %d\n", memList[i].getUserId(),memList[i].getUserName(),memList[i].getPhone(),memList[i].getMileage());
+							if(members.get(i).getUserName().equals(selectName)){
+								System.out.printf("ID : %s 이름 : %s \n전화번호 : %s 잔여포인트 : %d\n", members.get(i).getUserId(),members.get(i).getUserName(),members.get(i).getPhone(),members.get(i).getMileage());
 								
 							}else if (selectName=="") {
 									
-								System.out.printf("[%d]ID : %s 이름 : %s \n전화번호 : %s 잔여포인트 : %d\n",i,memList[i].getUserId(),memList[i].getUserName(),memList[i].getPhone(),memList[i].getMileage());
+								System.out.printf("[%d]ID : %s 이름 : %s \n전화번호 : %s 잔여포인트 : %d\n",i,members.get(i).getUserId(),members.get(i).getUserName(),members.get(i).getPhone(),members.get(i).getMileage());
 								
 							}
 							else {
