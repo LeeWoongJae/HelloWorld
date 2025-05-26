@@ -92,10 +92,12 @@ public class MemberExePrac {
 					for(int i=0;i<members.size();i++) {
 						if(!(selectName.equals("")) || (selectName.equals(members.get(i).getUserName()))){
 							
-							members.get(i).setUserId("");
-							members.get(i).setUserName("");
-							members.get(i).setPhone("");
-							members.get(i).setMileage(0);
+//							members.get(i).setUserId("");
+//							members.get(i).setUserName("");
+//							members.get(i).setPhone("");
+//							members.get(i).setMileage(0);
+							members.remove(i);
+							
 							System.out.println("삭제되었습니다!");
 							break;
 						}else if(!(selectName.equals(members.get(i).getUserName()))) {
